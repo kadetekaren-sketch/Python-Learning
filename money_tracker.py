@@ -3,26 +3,35 @@ print("===== MY MONEY TRACKER =====")
 balance = float(input("How much money do you have? £"))
 
 transactions = []
+while True:
+    print("\n1. Add income")
+    print("2. Add expense")
+    print("3. Check balance")
+    print("4. Exit")
+    choice = input("Choose 1, 2, 3 or 4: ")
 
-print("\n1. Add income")
-print("2. Add expense")
+    if choice == "4":
+        print("Exiting...")
+        break
 
-choice = input("Choose 1 or 2: ")
+    amount = float(input("Enter amount: £"))
 
-amount = float(input("Enter amount: £"))
 
-if choice == "1":
-    balance = balance + amount
-    transactions.append(f"Income: +£{amount:.2f}")
-    print("Income added!")
+    if choice == "1":
+        balance = balance + amount
+        transactions.append(f"Income: +£{amount:.2f}")
+        print("Income added!")
 
-elif choice == "2":
-    balance = balance - amount
-    transactions.append(f"Expense: -£{amount:.2f}")
-    print("Expense added!")
-
-else:
-    print("Invalid choice!")
+    elif choice == "2":
+        balance = balance - amount
+        transactions.append(f"Expense: -£{amount:.2f}")
+        print("Expense added!")
+    elif choice == "3":
+            print(f"Your balance is £{balance:.2f}")
+            continue
+    
+    else:
+        print("Invalid choice!")
 
 print("\n===== TRANSACTION HISTORY =====")
 
