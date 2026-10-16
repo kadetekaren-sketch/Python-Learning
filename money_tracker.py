@@ -1,3 +1,6 @@
+#This is a simple money tracker program that allows users to add income and expenses, check their balance, and view their transaction history.
+
+
 print("===== MY MONEY TRACKER =====")
 
 balance = float(input("How much money do you have? £"))
